@@ -20,7 +20,7 @@ GetHeight() : heigth of the screen
 
 FRAME : Just the outline
 FILLED : The shape filled with a color
-INVERTED
+INVERTED : we won't use this
 
 ---------------------------------------------------------------------------
 
