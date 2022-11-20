@@ -240,6 +240,28 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 	
 }
+void Output::DrawTriangle(Point P1, Point P2,Point p3, GfxInfo triGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = triGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (triGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(triGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,p3.x,p3.y, style);
+
+}
 
 
 
