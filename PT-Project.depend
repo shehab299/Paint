@@ -1,0 +1,267 @@
+# depslib dependency file v1.0
+927020080 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\auxil.cpp
+	<cstdlib>
+	<windows.h>
+	"auxil.h"
+
+927020068 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\auxil.h
+	"version.h"
+
+928045522 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\version.h
+
+1331506132 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\cmugraphics.cpp
+	<string>
+	<iostream>
+	<cstdio>
+	<cmath>
+	"CMUgraphics.h"
+	"error.h"
+	"windowinput.h"
+
+928045024 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\cmugraphics.h
+	<string>
+	<windows.h>
+	"mousequeue.h"
+	"keyqueue.h"
+	"image.h"
+	"colors.h"
+	"version.h"
+
+926843414 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\mousequeue.h
+	<cstdlib>
+	"version.h"
+
+927018924 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\keyqueue.h
+	<cstdlib>
+	"version.h"
+
+927023096 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\image.h
+	<string>
+	<windows.h>
+	"version.h"
+
+930649286 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\colors.h
+	"version.h"
+
+926844384 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\error.h
+	"version.h"
+
+927018542 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\windowinput.h
+	<windows.h>
+	"mousequeue.h"
+	"keyqueue.h"
+
+930649276 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\colors.cpp
+	"colors.h"
+
+927011142 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\image.cpp
+	<iostream>
+	"image.h"
+	"error.h"
+	"jpegload.h"
+
+927011404 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpegload.h
+	"version.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jcomapi.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jinclude.h
+	"jconfig.h"
+	<stddef.h>
+	<stdlib.h>
+	<sys/types.h>
+	<stdio.h>
+	<strings.h>
+	<string.h>
+
+911898546 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jconfig.h
+	<stdlib.h>
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jmorecfg.h
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jpegint.h
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jerror.h
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jcparam.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdapimin.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdapistd.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdatasrc.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jerror.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdcoefct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdcolor.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jddctmgr.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+911898546 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdct.h
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdhuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdhuff.h"
+
+911898546 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdhuff.h
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdinput.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdmainct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdmarker.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdmaster.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdmerge.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdphuff.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdhuff.h"
+
+911898546 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdpostct.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdsample.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jdtrans.c
+	"jinclude.h"
+	"jpeglib.h"
+
+1668078200 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jerror.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jversion.h"
+	"jerror.h"
+	"jerror.h"
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jversion.h
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jidctflt.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jidctfst.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jidctint.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jidctred.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jdct.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jmemmgr.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jmemsys.h"
+
+911898548 f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jmemsys.h
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jmemnobs.c
+	"jinclude.h"
+	"jpeglib.h"
+	"jmemsys.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jquant1.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jquant2.c
+	"jinclude.h"
+	"jpeglib.h"
+
+911898548 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpeg\jutils.c
+	"jinclude.h"
+	"jpeglib.h"
+
+927011398 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\jpegload.c
+	<stdlib.h>
+	<stdio.h>
+	"jpeg\jinclude.h"
+	"jpeg\jpeglib.h"
+	"jpegload.h"
+
+927018928 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\keyqueue.cpp
+	"keyqueue.h"
+
+926844216 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\mousequeue.cpp
+	"mousequeue.h"
+
+927018662 source:f:\data_viz\pie\phase1 - code f22\cmugraphicslib\windowinput.cpp
+	<iostream>
+	<string>
+	"CMUgraphics.h"
+	"windowinput.h"
+	"error.h"
+
+1668077776 source:f:\data_viz\pie\phase1 - code f22\gui\input.cpp
+	"Input.h"
+	"Output.h"
+
+1507672294 f:\data_viz\pie\phase1 - code f22\gui\input.h
+	"..\DEFS.h"
+	"UI_Info.h"
+	"..\CMUgraphicsLib\CMUgraphics.h"
+
+1668077764 f:\data_viz\pie\phase1 - code f22\defs.h
+	"CMUgraphicsLib\CMUgraphics.h"
+
+1668077638 f:\data_viz\pie\phase1 - code f22\gui\ui_info.h
+	"..\CMUgraphicsLib\CMUgraphics.h"
+
+1540316128 f:\data_viz\pie\phase1 - code f22\gui\output.h
+	"Input.h"
+
+1540316186 source:f:\data_viz\pie\phase1 - code f22\gui\output.cpp
+	"Output.h"
+
+1668078090 source:f:\data_viz\pie\phase1 - code f22\testcode.cpp
+	"GUI\Input.h"
+	"GUI\Output.h"
+

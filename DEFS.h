@@ -20,6 +20,8 @@ enum ActionType //The actions supported (you can add more if needed)
 struct Point	//To be used for figures points
 { int x,y; };
 
+
+
 struct GfxInfo	//Graphical info of each figure (you may add more members)
 {
 	color DrawClr;	//Draw color of the figure
@@ -28,5 +30,17 @@ struct GfxInfo	//Graphical info of each figure (you may add more members)
 	int BorderWdth;	//Width of figure borders
 
 };
+
+/*
+enum Paths
+{
+	ICONS_PATH,
+	PATHS_COUNT
+}
+	string PATHS[PATHS_COUNT];
+
+	PATHS[ICONS_PATH] = "images\\MenuItems\\";
+*/
+
 
 #endif
