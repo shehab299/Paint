@@ -263,6 +263,111 @@ void Output::DrawTriangle(Point P1, Point P2,Point p3, GfxInfo triGfxInfo, bool 
 
 }
 
+void Output::DrawSqr(Point P1, GfxInfo RectGfxInfo, bool selected) const
+{
+	int side = 80;
+	Point P2;
+	Point P3;
+	P2.x = P1.x - (side / 2);
+	P2.y = P1.y + (side / 2);
+	P3.x = P1.x + (side / 2);
+	P3.y = P1.y - (side / 2);
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = RectGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (RectGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RectGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	pWind->DrawRectangle(P2.x, P2.y, P3.x, P3.y, style);
+}
+
+void Output::DrawCrcl(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
+{
+	int deltX = pow((P1.x - P2.x), 2);
+	int deltY = pow((P1.y - P2.y), 2);
+	int r = sqrt(deltX + deltY);
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = RectGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (RectGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RectGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	pWind->DrawCircle(P1.x, P1.y, r, style);
+}
+
+
+
+void Output::CalcHxgVer(Point Pc, int XVer[], int YVer[], int NumVer, int side) const
+{
+	for (int i = 0; i < NumVer; i++)
+	{
+		//calculate the x coordinates of the vertices
+		if (i == 0 || i == 2)
+			XVer[i] = Pc.x + (0.5 * side);
+		else if (i == 3 || i == 5)
+			XVer[i] = Pc.x - (0.5 * side);
+		else if (i == 1)
+			XVer[i] = Pc.x + side;
+		else
+			XVer[i] = Pc.x - side;
+
+
+		//calculate the y coordinates of the vertices
+		if (i == 0 || i == 5)
+			YVer[i] = Pc.y - (0.866025 * side);
+		else if (i == 3 || i == 2)
+			YVer[i] = Pc.y + (0.866025 * side);
+		else
+			YVer[i] = Pc.y;
+
+	}
+
+}
+
+
+void Output::DrawHxg(Point P1, GfxInfo RectGfxInfo, bool selected) const
+{
+	int side = 120;
+	const int VerNum = 6;
+	int VerX[VerNum];
+	int VerY[VerNum];
+	CalcHxgVer(P1, VerX, VerY, VerNum, side); //calculate the vertices of hexagon
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = RectGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (RectGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RectGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	pWind->DrawPolygon(VerX, VerY, VerNum, style);
+}
+
 
 
 Output::~Output()
