@@ -1,3 +1,10 @@
-﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  TestCode.cpp
-  PT-Project.vcxproj -> C:\Users\Dell Inc\source\repos\Painta\Debug\PT Project.exe
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Output.cpp
+E:\final_project\Paint\GUI\Output.cpp(309,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(310,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(311,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(338,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(340,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(349,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\final_project\Paint\GUI\Output.cpp(351,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  PT-Project.vcxproj -> E:\final_project\Paint\Debug\PT Project.exe

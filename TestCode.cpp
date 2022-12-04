@@ -299,7 +299,7 @@ int main()
 
 		switch (ActType)
 		{
-		case DRAW_RECT:
+		case rectangle:
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
 

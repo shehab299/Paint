@@ -18,6 +18,8 @@ enum COLORS // colors of the colors Menu
 	RED_,
 	BLUE_,
 	YELLOW_,
+	ORANGE_,
+	GREEN_,
 	BLACK_,
 	COLORS_COUNT
 };
@@ -75,10 +77,14 @@ struct UI_Info	//User Interface Info.
 	GUI_MODE InterfaceMode;
 	
 	int	width, height,	    //Window width and height
-		wx , wy,			//Window starting coordinates
+		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
-		MenuItemWidth;		//Width of each item in toolbar menu
+		MenuItemWidth,		//Width of each item in toolbar menu
+		Additional_Items_Height,
+		MenuItemHeight,
+		AdditionalMenuItemHeight,		//Width of each item in toolbar menu
+		AdditionalItemsHeight;
 
 
 	ADDIONAL_MODE Additional_Items_Mode;

@@ -4,8 +4,8 @@
 Output::Output()
 {
 	//Initialize user interface parameters
-	UI.InterfaceMode = MODE_DRAW;
-	UI.Additional_Items_Mode = NOTHING;
+	UI.InterfaceMode = MODE_PLAY;
+	UI.Additional_Items_Mode = SHAPES;
 
 	UI.width = 1250;
 	UI.height = 650;
@@ -17,13 +17,18 @@ Output::Output()
 
 	UI.ToolBarHeight = 50;
 	UI.MenuItemWidth = 40;
-	
+	UI.MenuItemHeight = UI.ToolBarHeight - 15;
+	UI.AdditionalMenuItemHeight = 30;
+	UI.AdditionalItemsHeight = 32;
+
+
+
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
-	UI.MsgColor = RED;		//Messages color
-	UI.BkGrndColor = WHITE;	//Background color
+	UI.MsgColor = WHITE;		//Messages color
+	UI.BkGrndColor = CYAN;	//Background color
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
-	UI.StatusBarColor = TURQUOISE;
+	UI.StatusBarColor = BRIGHTPURPLE;
 	UI.PenWidth = 3;	//width of the figures frames
 
 	
@@ -32,11 +37,11 @@ Output::Output()
 	//Change the title
 	pWind->ChangeTitle("Paint for Kids");
 	
-	CreateDrawToolBar();
-	CreateAdditionalItemsBar(UI.Additional_Items_Mode);
+	//CreateDrawToolBar();
+	CreatePlayToolBar();
+	//CreateAdditionalItemsBar(UI.Additional_Items_Mode);
 	CreateStatusBar();
 }
-
 
 Input* Output::CreateInput() const
 {
@@ -49,11 +54,11 @@ Input* Output::CreateInput() const
 //======================================================================================//
 
 window* Output::CreateWind(int w, int h, int x, int y) const
-{ 
+{
 	window* pW = new window(w, h, x, y);
 	pW->SetBrush(UI.BkGrndColor);
 	pW->SetPen(UI.BkGrndColor, 1);
-	pW->DrawRectangle(0, UI.ToolBarHeight, w, h);	
+	pW->DrawRectangle(0, UI.ToolBarHeight, w, h);
 	return pW;
 }
 
@@ -101,14 +106,14 @@ void Output::CreateDrawToolBar() const
 	//Draw menu item one image at a time
 	int i;
 	for (i = 0; i < ITM_EXIT; i++) {
-		pWind->DrawImage(MenuItemImages[i], i * (UI.MenuItemWidth + 5) , 10 , UI.MenuItemWidth, UI.ToolBarHeight - 15);
+		pWind->DrawImage(MenuItemImages[i], i * (UI.MenuItemWidth + 5), 10, UI.MenuItemWidth, UI.MenuItemHeight);
 	}
-	pWind->DrawImage(MenuItemImages[i], UI.width - (UI.MenuItemWidth + 15), 10 , UI.MenuItemWidth, UI.ToolBarHeight - 15);
+	pWind->DrawImage(MenuItemImages[i], UI.width - (UI.MenuItemWidth + 15), 10, UI.MenuItemWidth, UI.MenuItemHeight);
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(BLACK , 1);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
+	pWind->SetPen(BLACK, 1);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
 
@@ -117,39 +122,42 @@ void Output::CreateAdditionalItemsBar(ADDIONAL_MODE mode) const
 {
 	//paths for colors and shapes
 	string COLORS_PATH = "images\\colors\\";
-	string SHAPES_PATH = "images\\shapes\\";
+	string SHAPES_PATH = "images\\Shapes\\";
 
 	//draw the Bar
 	pWind->SetPen(BLACK, 1);
-	pWind->DrawRectangle(0, UI.ToolBarHeight + 1 , UI.width, UI.ToolBarHeight + 33 );
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, UI.ToolBarHeight + 1, UI.width, UI.ToolBarHeight + 1 + UI.AdditionalItemsHeight);
 
 	//check the mode and show the suitable icons
-	if(mode == COLORS)
+	if (mode == COLORS)
 	{
-		
-		string ColorsItems[COLORS_COUNT];
-			ColorsItems[RED_] = COLORS_PATH + "red.jpg";
-			ColorsItems[BLACK_] = COLORS_PATH + "black.jpg";
-			ColorsItems[YELLOW_] = COLORS_PATH + "yellow.jpg";
-			ColorsItems[BLUE_] = COLORS_PATH + "blue.jpg";
 
-		for(int i = 0 ; i < COLORS_COUNT ; i++)
+		string ColorsItems[COLORS_COUNT];
+		ColorsItems[RED_] = COLORS_PATH + "red.jpg";
+		ColorsItems[BLACK_] = COLORS_PATH + "black.jpg";
+		ColorsItems[YELLOW_] = COLORS_PATH + "yellow.jpg";
+		ColorsItems[BLUE_] = COLORS_PATH + "blue.jpg";
+		ColorsItems[ORANGE_] = COLORS_PATH + "orange.jpg";
+		ColorsItems[GREEN_] = COLORS_PATH + "green.jpg";
+
+		for (int i = 0; i < COLORS_COUNT; i++)
 		{
 			pWind->DrawImage(ColorsItems[i], i * (UI.MenuItemWidth + 5), UI.ToolBarHeight + 2, UI.MenuItemWidth, 30);
 		}
 	}
-	else if(mode == SHAPES)
+	else if (mode == SHAPES)
 	{
 		string ShapesItems[SHAPES_COUNT];
-			ShapesItems[RECTANGLE] = SHAPES_PATH + "rectange.jpg";
-			ShapesItems[CIRCLE] = SHAPES_PATH + "circle.jpg";
-			ShapesItems[HEXAGON] = SHAPES_PATH + "hexagon.jpg";
-			ShapesItems[SQUARE] = SHAPES_PATH + "square.jpg";
-			ShapesItems[TRIANGLE] = SHAPES_PATH + "triangle.jpg";
+		ShapesItems[RECTANGLE] = SHAPES_PATH + "rectangle.jpg";
+		ShapesItems[CIRCLE] = SHAPES_PATH + "circle.jpg";
+		ShapesItems[HEXAGON] = SHAPES_PATH + "hexagon.jpg";
+		ShapesItems[SQUARE] = SHAPES_PATH + "square.jpg";
+		ShapesItems[TRIANGLE] = SHAPES_PATH + "triangle.jpg";
 
 		for (int i = 0; i < SHAPES_COUNT; i++)
 		{
-			pWind->DrawImage(ShapesItems[i], i * (UI.MenuItemWidth + 5), UI.ToolBarHeight + 2, UI.MenuItemWidth, 30);
+			pWind->DrawImage(ShapesItems[i], i * (UI.MenuItemWidth + 5), UI.ToolBarHeight + 2, UI.MenuItemWidth, UI.AdditionalMenuItemHeight);
 		}
 	}
 
@@ -163,24 +171,25 @@ void Output::CreatePlayToolBar() const
 
 	string PATH_ICONS_PLAY = "images\\PlayMenuItems\\";
 	string PlayMenuItems[PLAY_ITM_COUNT];
-		PlayMenuItems[PLAY_COLOR] = PATH_ICONS_PLAY + "bycolor.jpg";
-		PlayMenuItems[PLAY_SHAPE] = PATH_ICONS_PLAY + "byshape.jpg";
-		PlayMenuItems[PLAY_COLORNSHAPE] = PATH_ICONS_PLAY + "bycolshape.jpg";
-		PlayMenuItems[PLAY_EXIT] = PATH_ICONS_PLAY + "exit.jpg";
-		PlayMenuItems[PLAY_DRAW_MODE] = PATH_ICONS_PLAY + "draw_mode.jpg";
-	
+	PlayMenuItems[PLAY_COLOR] = PATH_ICONS_PLAY + "bycolor.jpg";
+	PlayMenuItems[PLAY_SHAPE] = PATH_ICONS_PLAY + "byshape.jpg";
+	PlayMenuItems[PLAY_COLORNSHAPE] = PATH_ICONS_PLAY + "bycolornshape.jpg";
+	PlayMenuItems[PLAY_EXIT] = PATH_ICONS_PLAY + "exit.jpg";
+	PlayMenuItems[PLAY_DRAW_MODE] = PATH_ICONS_PLAY + "draw.jpg";
+
 	//Draw menu item one image at a time
-	int i;
-	for (i = 0; i < ITM_EXIT; i++) {
-		pWind->DrawImage(PlayMenuItems[i], i * (UI.MenuItemWidth + 5) , 10 , UI.MenuItemWidth, UI.ToolBarHeight - 15);
+
+	int j = 0;
+	for (; j < PLAY_EXIT; j++) {
+		pWind->DrawImage(PlayMenuItems[j], j * (UI.MenuItemWidth + 5), 10, UI.MenuItemWidth, UI.ToolBarHeight - 15);
 	}
-	pWind->DrawImage(PlayMenuItems[i], UI.width - (UI.MenuItemWidth + 15), 10 , UI.MenuItemWidth, UI.ToolBarHeight - 15);
+	pWind->DrawImage(PlayMenuItems[j], UI.width - (UI.MenuItemWidth + 15), 10, UI.MenuItemWidth, UI.ToolBarHeight - 15);
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(BLACK , 1);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
-	
+	pWind->SetPen(BLACK, 1);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
 }
 
 
@@ -188,18 +197,23 @@ void Output::ClearDrawArea() const
 {
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
-	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
-	
+	pWind->DrawRectangle(0, UI.ToolBarHeight + 33, UI.width, UI.height - (UI.StatusBarHeight + 33));
+
 }
 
 
 void Output::PrintMessage(string msg) const	//Prints a message on status bar
 {
 	ClearStatusBar();	//First clear the status bar
-	
+
+	int Yi_icon = UI.height - UI.StatusBarHeight;
+	int Yi_msg = UI.height - UI.StatusBarHeight + 10;
+	string notify_path = "images//notifications//message2.jpg";
+
+	pWind->DrawImage(notify_path, 5, Yi_icon, 35, 35);
 	pWind->SetPen(UI.MsgColor, 50);
-	pWind->SetFont(20, BOLD , BY_NAME, "Arial");   
-	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight/1.5), msg);
+	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
+	pWind->DrawString(50, Yi_msg, msg);
 }
 
 
