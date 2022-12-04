@@ -6,8 +6,34 @@
 //This file contains some global constants and definitions to be used in the project.
 enum ActionType //The actions supported (you can add more if needed)
 {
-	DRAW_RECT,		//Draw Rectangle
-	EXIT,			//Exit
+	SAVE,
+	LOAD,
+	REDO,
+	UNDO,
+	PLAY,
+	PAUSE,
+	ADD,
+	SELECT,
+	FILL,
+	DCOLOR,
+	MOVE,
+	COUNT,
+	EXIT,	
+	PCOLOR,
+	PSHAPE,
+	PCOLORNSHAPE,
+	black,
+	yellow,
+	orang,
+	red,
+	green,
+	blue,
+	orange,
+	rectangle,
+	circle,
+	hexagon,
+	square,
+	triangle,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY,		//Switch interface to Play mode
 	EMPTY,			//A click on empty place in the toolbar
@@ -20,8 +46,6 @@ enum ActionType //The actions supported (you can add more if needed)
 struct Point	//To be used for figures points
 { int x,y; };
 
-
-
 struct GfxInfo	//Graphical info of each figure (you may add more members)
 {
 	color DrawClr;	//Draw color of the figure
@@ -30,17 +54,5 @@ struct GfxInfo	//Graphical info of each figure (you may add more members)
 	int BorderWdth;	//Width of figure borders
 
 };
-
-/*
-enum Paths
-{
-	ICONS_PATH,
-	PATHS_COUNT
-}
-	string PATHS[PATHS_COUNT];
-
-	PATHS[ICONS_PATH] = "images\\MenuItems\\";
-*/
-
 
 #endif
