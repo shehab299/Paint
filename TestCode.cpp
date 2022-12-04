@@ -302,7 +302,78 @@ int main()
 		case rectangle:
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
-
+		case triangle:
+			pOut->PrintMessage("Action: Draw a Triangle , Click anywhere");
+				break;
+        case circle:
+			pOut->PrintMessage("Action: Draw a Circle , Click anywhere");
+				break;
+        case hexagon:
+			pOut->PrintMessage("Action: Draw a Hexagon , Click anywhere");
+				break;
+		case square:
+			pOut->PrintMessage("Action: Draw a Square , Click anywhere");
+				break;	
+		case red:
+			pOut->PrintMessage("Action: choose Red , Click anywhere");
+				break;	
+		case blue:
+			pOut->PrintMessage("Action: choose Blue , Click anywhere");
+				break;	
+		case yellow:
+			pOut->PrintMessage("Action: choose Yellow , Click anywhere");
+				break;
+        case orange:
+			pOut->PrintMessage("Action: choose Orange , Click anywhere");
+				break;
+        case black:
+			pOut->PrintMessage("Action: choose Black , Click anywhere");
+				break;
+        case green:
+			pOut->PrintMessage("Action: choose Green , Click anywhere");
+				break;
+		case SAVE:
+			pOut->PrintMessage("Action: Save Figure , Click anywhere");
+				break;
+		case LOAD:
+			pOut->PrintMessage("Action: Load Figure , Click anywhere");
+				break;
+		case REDO:
+			pOut->PrintMessage("Action: Redo Action , Click anywhere");
+				break;
+		case UNDO:
+			pOut->PrintMessage("Action: UNDO Action , Click anywhere");
+				break;
+		case PLAY:
+			pOut->PrintMessage("Action: Play Audio , Click anywhere");
+				break;
+		case PAUSE:
+			pOut->PrintMessage("Action: Puase Audio , Click anywhere");
+				break;
+		case ADD:
+			pOut->PrintMessage("Action: Add Figure , Click anywhere");
+				break;
+        case SELECT:
+			pOut->PrintMessage("Action: Select Figure , Click anywhere");
+				break;
+		case FILL:
+			pOut->PrintMessage("Action: Fill Figure , Click anywhere");
+				break;
+		case DCOLOR:
+			pOut->PrintMessage("Action: choose Color , Click anywhere");
+				break;
+        case MOVE:
+			pOut->PrintMessage("Action: Move Figure , Click anywhere");
+				break;
+		case PCOLOR:
+			pOut->PrintMessage("Action: PLAY MODE COLORS , Click anywhere");
+				break;
+		case PSHAPE:
+			pOut->PrintMessage("Action: PLAY MODE SHAPES , Click anywhere");
+				break;
+		case PCOLORNSHAPE:
+					pOut->PrintMessage("Action: PLAY MODE COLORNSHAPE , Click anywhere");
+				break;
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;
@@ -310,7 +381,7 @@ int main()
 		case DRAWING_AREA:
 				pOut->PrintMessage("Action: a click on the Drawing Area, Click anywhere");
 				break;
-
+		
 		case EMPTY:
 				pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
 				break;
