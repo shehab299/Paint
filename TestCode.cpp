@@ -39,13 +39,13 @@ int main()
 	GfxInfo gfxInfo_fill;
 	Point P1, P2, P3;
 
-	gfxInfo_non_fill.BorderWdth = 5;
+	gfxInfo_non_fill.BorderWdth = UI.PenWidth;
 	gfxInfo_non_fill.DrawClr = BLACK;	//any color for border
 	gfxInfo_non_fill.isFilled = false;	//Figure is NOT filled
 
-	gfxInfo_fill.BorderWdth = 6;
+	gfxInfo_fill.BorderWdth = UI.PenWidth;
 	gfxInfo_fill.DrawClr = BLACK;
-	gfxInfo_fill.FillClr = DARKGREY ;
+	gfxInfo_fill.FillClr = UI.FillColor;
 	gfxInfo_fill.isFilled = true;//Figure is filled	
 
 	/// 2.1- Rectangle Test ///
@@ -262,11 +262,11 @@ int main()
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar
 	// 2- After reading the string clear the status bar
-	// 3- print on the status bar "You Entered" then print the string
+	// 3- print on the status bar "You Entered" then pri-nt the string
 
-	pOut->PrintMessage("Please input a string : ");
+	pOut->PrintMessage("Please input a string, then click anywhere to continue : ");
 	pIn->GetSrting(pOut);
-	
+
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -327,17 +327,17 @@ int main()
 		case LOAD:
 			pOut->PrintMessage("Action: Load Figure , Click anywhere");
 			break;
+		case UNDO:
+			pOut->PrintMessage("Action: Undo Action , Click anywhere");
+			break;
 		case REDO:
 			pOut->PrintMessage("Action: Redo Action , Click anywhere");
-			break;
-		case UNDO:
-			pOut->PrintMessage("Action: UNDO Action , Click anywhere");
 			break;
 		case PLAY:
 			pOut->PrintMessage("Action: Play Audio , Click anywhere");
 			break;
 		case PAUSE:
-			pOut->PrintMessage("Action: Puase Audio , Click anywhere");
+			pOut->PrintMessage("Action: Pause Audio , Click anywhere");
 			break;
 		case ADD:
 			pOut->CreateAdditionalItemsBar(SHAPES);
@@ -391,10 +391,12 @@ int main()
 			pOut->PrintMessage("Action: Exit");
 
 			///TODO: Add more cases for the other action types
+		case EXIT_PLAY:
+			pOut->PrintMessage("Action: Exit");
 
 
 		}
-	} while (true);
+	} while (ActType!=EXIT);
 
 
 	/// Exiting
