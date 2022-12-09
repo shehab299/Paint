@@ -1,11 +1,30 @@
 #ifndef OUPTUT_H
 #define OUPTUT_H
+
 #include "Input.h"
 
 class Output	//The application manager should have a pointer to this class
 {
 private:	
 	window* pWind;	//Pointer to the Graphics Window
+
+	string MenuItemImages[DRAW_ITM_COUNT];
+	string ColorsItems[COLORS_COUNT];
+	string ShapesItems[SHAPES_COUNT];
+	string PlayMenuItems[PLAY_ITM_COUNT];
+
+	//path for draw icons
+	const string PATH_ICONS_DRAW = "images\\DrawMenuItems\\1\\";
+	//paths for colors and shapes
+	const string COLORS_PATH = "images\\Colors\\";
+	const string SHAPES_PATH = "images\\Shapes\\";
+	//path for play icons
+	const string PATH_ICONS_PLAY = "images\\PlayMenuItems\\";
+	//status bar icon
+	const string notify_path = "images//notifications//message2.jpg";
+
+
+
 public:
 	Output();		
 
