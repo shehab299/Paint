@@ -45,8 +45,8 @@ enum DrawMenuItem // The items of the Draw menu
 {
 	ITM_SAVE,
 	ITM_LOAD,
-	ITM_UNDO,
 	ITM_REDO,
+	ITM_UNDO,
 	ITM_PLAY,
 	ITM_PAUSE,
 	ITM_ADD,
@@ -65,6 +65,7 @@ enum PlayMenuItem // The items of the Play menu
 	PLAY_SHAPE,
 	PLAY_COLORNSHAPE,
 	PLAY_DRAW_MODE,
+	PLAY_EXIT,
 	PLAY_ITM_COUNT		//no. of menu items 
 };
 
