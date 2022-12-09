@@ -396,7 +396,7 @@ int main()
 
 
 		}
-	} while (true);
+	} while (ActType!=EXIT&& ActType!= EXIT_PLAY);
 
 
 	/// Exiting
