@@ -23,12 +23,12 @@ Output::Output()
 
 	UI.ToolBarColor = WHITE;
 	UI.DrawColor = BLACK;	//Drawing color
-	UI.FillColor = BROWN;	//Filling color
+	UI.FillColor = CORNFLOWERBLUE;	//Filling color
 	UI.MsgColor = WHITE;		//Messages color
-	UI.BkGrndColor = CYAN;	//Background color
-	UI.HighlightColor = BLUEVIOLET;
+	UI.BkGrndColor = ANTIQUEWHITE;	//Background color
+	UI.HighlightColor = DARKBLUE;
 	UI.StatusBarColor = BRIGHTPURPLE;
-	UI.PenWidth = 3;	//width of the figures frames
+	UI.PenWidth = 4;	//width of the figures frames
 
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);
 	pWind->ChangeTitle("Paint for Kids");
@@ -36,8 +36,8 @@ Output::Output()
 	//DrawIcons
 	MenuItemImages[ITM_SAVE] = PATH_ICONS_DRAW + "saved.jpg";
 	MenuItemImages[ITM_LOAD] = PATH_ICONS_DRAW + "load.jpg";
-	MenuItemImages[ITM_REDO] = PATH_ICONS_DRAW + "undo.jpg";
-	MenuItemImages[ITM_UNDO] = PATH_ICONS_DRAW + "redo.jpg";
+	MenuItemImages[ITM_REDO] = PATH_ICONS_DRAW + "redo.jpg";
+	MenuItemImages[ITM_UNDO] = PATH_ICONS_DRAW + "undo.jpg";
 	MenuItemImages[ITM_PLAY] = PATH_ICONS_DRAW + "play.jpg";
 	MenuItemImages[ITM_PAUSE] = PATH_ICONS_DRAW + "pause.jpg";
 	MenuItemImages[ITM_ADD] = PATH_ICONS_DRAW + "shapes.jpg";
@@ -67,8 +67,8 @@ Output::Output()
 	PlayMenuItems[PLAY_COLOR] = PATH_ICONS_PLAY + "bycolor.jpg";
 	PlayMenuItems[PLAY_SHAPE] = PATH_ICONS_PLAY + "byshape.jpg";
 	PlayMenuItems[PLAY_COLORNSHAPE] = PATH_ICONS_PLAY + "bycolornshape.jpg";
-	PlayMenuItems[PLAY_EXIT] = PATH_ICONS_PLAY + "exit.jpg";
 	PlayMenuItems[PLAY_DRAW_MODE] = PATH_ICONS_PLAY + "draw.jpg";
+	PlayMenuItems[PLAY_EXIT] = PATH_ICONS_DRAW + "exit.jpg";
 
 
 	CreateDrawToolBar();
@@ -169,7 +169,7 @@ void Output::CreatePlayToolBar() const
 
 	//Draw menu item one image at a time
 
-	for (int j = 0; j < PLAY_EXIT; j++)
+	for (int j = 0; j < PLAY_ITM_COUNT; j++)
 	{
 		pWind->DrawImage(PlayMenuItems[j], j * (UI.MenuItemWidth + 5), 10, UI.MenuItemWidth, UI.MenuItemHeight);
 	}
@@ -228,7 +228,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	else			
 		DrawingClr = RectGfxInfo.DrawClr;
 	
-	pWind->SetPen(DrawingClr,1);
+	pWind->SetPen(DrawingClr, UI.PenWidth);
 	drawstyle style;
 	if (RectGfxInfo.isFilled)	
 	{
@@ -250,7 +250,7 @@ void Output::DrawTriangle(Point P1, Point P2,Point p3, GfxInfo triGfxInfo, bool 
 	else
 		DrawingClr = triGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, UI.PenWidth);
 	drawstyle style;
 	if (triGfxInfo.isFilled)
 	{
@@ -267,7 +267,7 @@ void Output::DrawTriangle(Point P1, Point P2,Point p3, GfxInfo triGfxInfo, bool 
 
 void Output::DrawSqr(Point P1, GfxInfo RectGfxInfo, bool selected) const
 {
-	int side = 80;
+	int side = 120;
 	Point P2;
 	Point P3;
 	P2.x = P1.x - (side / 2);
@@ -280,7 +280,7 @@ void Output::DrawSqr(Point P1, GfxInfo RectGfxInfo, bool selected) const
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, UI.PenWidth);
 	drawstyle style;
 	if (RectGfxInfo.isFilled)
 	{
@@ -303,7 +303,7 @@ void Output::DrawCrcl(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, UI.PenWidth);
 	drawstyle style;
 	if (RectGfxInfo.isFilled)
 	{
@@ -358,7 +358,7 @@ void Output::DrawHxg(Point P1, GfxInfo RectGfxInfo, bool selected) const
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, 1);
+	pWind->SetPen(DrawingClr, UI.PenWidth);
 	drawstyle style;
 	if (RectGfxInfo.isFilled)
 	{
