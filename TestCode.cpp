@@ -396,7 +396,7 @@ int main()
 
 
 		}
-	} while (ActType!=EXIT);
+	} while (true);
 
 
 	/// Exiting
