@@ -151,6 +151,8 @@ ActionType Input::GetUserAction(Output* po) const
 				case PLAY_SHAPE: return PSHAPE;
 				case PLAY_COLORNSHAPE : return PCOLORNSHAPE;
 				case PLAY_DRAW_MODE: return TO_DRAW;
+				case PLAY_EXIT: return EXIT_PLAY;
+
 			}		
 		}			//[2] User clicks on the drawing area
 		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
