@@ -8,15 +8,21 @@ enum ActionType //The actions supported (you can add more if needed)
 {
 	SAVE,
 	LOAD,
-	REDO,
 	UNDO,
+	REDO,
+	RECORD,
+	STOP,
 	PLAY,
-	PAUSE,
+	AUDIO,
 	ADD,
 	SELECT,
+	DLTE,
+	CLR,
 	FILL,
 	DCOLOR,
 	MOVE,
+	DRAG,
+	RESIZE,
 	COUNT,
 	EXIT,	
 	PCOLOR,
@@ -37,7 +43,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	TO_PLAY,		//Switch interface to Play mode
 	EMPTY,			//A click on empty place in the toolbar
 	DRAWING_AREA,	//A click on the drawing area
-	EXIT_PLAY,
+	EXT_PLAY,
 	STATUS	//A click on the status bar
 	
 	///TODO: Add the other action types of the two modes
