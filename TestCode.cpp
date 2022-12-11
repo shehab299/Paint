@@ -322,10 +322,10 @@ int main()
 			pOut->PrintMessage("Action: choose Green , Click anywhere");
 			break;
 		case SAVE:
-			pOut->PrintMessage("Action: Save Figure , Click anywhere");
+			pOut->PrintMessage("Action: Save Graph , Click anywhere");
 			break;
 		case LOAD:
-			pOut->PrintMessage("Action: Load Figure , Click anywhere");
+			pOut->PrintMessage("Action: Load Graph , Click anywhere");
 			break;
 		case UNDO:
 			pOut->PrintMessage("Action: Undo Action , Click anywhere");
@@ -333,30 +333,48 @@ int main()
 		case REDO:
 			pOut->PrintMessage("Action: Redo Action , Click anywhere");
 			break;
-		case PLAY:
-			pOut->PrintMessage("Action: Play Audio , Click anywhere");
+		case RECORD:
+			pOut->PrintMessage("Action: Record Action , Click anywhere");
 			break;
-		case PAUSE:
-			pOut->PrintMessage("Action: Pause Audio , Click anywhere");
+		case STOP:
+				pOut->PrintMessage("Action: Stop recording Action , Click anywhere");
+				break;
+		case PLAY:
+			pOut->PrintMessage("Action: Play Action , Click anywhere");
+			break;
+		case AUDIO:
+			pOut->PrintMessage("Action: Audio Action, Click anywhere");
 			break;
 		case ADD:
 			pOut->CreateAdditionalItemsBar(SHAPES);
-			pOut->PrintMessage("Action: Add Figure , Click anywhere");
+			pOut->PrintMessage("Action: Add Figure Action , Click anywhere");
 			break;
 		case SELECT:
-			pOut->PrintMessage("Action: Select Figure , Click anywhere");
+			pOut->PrintMessage("Action: Select Figure Action , Click anywhere");
+			break;
+		case DLTE:
+			pOut->PrintMessage("Action: Delete figure Action , Click anywhere");
+			break;
+		case CLR:
+			pOut->PrintMessage("Action: Clear all Action , Click anywhere");
 			break;
 		case FILL:
-			pOut->PrintMessage("Action: Fill Figure , Click anywhere");
+			pOut->PrintMessage("Action: Fill figure Action , Click anywhere");
 			pOut->CreateAdditionalItemsBar(COLORS);
 			break;
 		case DCOLOR:
-			pOut->PrintMessage("Action: choose Color , Click anywhere");
+			pOut->PrintMessage("Action: Choose color Action , Click anywhere");
 			pOut->CreateAdditionalItemsBar(COLORS);
 			break;
 		case MOVE:
-			pOut->PrintMessage("Action: Move Figure , Click anywhere");
+			pOut->PrintMessage("Action: Move figure Action , Click anywhere");
 			break;
+		case DRAG:
+			pOut->PrintMessage("Action: Move figure by dragging Action , Click anywhere");
+			break;
+		case RESIZE:
+			pOut->PrintMessage("Action: Resize figure by dragging Action , Click anywhere");
+		break;
 		case PCOLOR:
 			pOut->PrintMessage("Action: PLAY MODE COLORS , Click anywhere");
 			break;
@@ -389,14 +407,14 @@ int main()
 			break;
 		case EXIT:
 			pOut->PrintMessage("Action: Exit");
-
-			///TODO: Add more cases for the other action types
-		case EXIT_PLAY:
+			break;
+		case EXT_PLAY:
 			pOut->PrintMessage("Action: Exit");
-
+			break;
+			///TODO: Add more cases for the other action types
 
 		}
-	} while (ActType!=EXIT&& ActType!= EXIT_PLAY);
+	} while (ActType!=EXIT&& ActType!= EXT_PLAY);
 
 
 	/// Exiting
