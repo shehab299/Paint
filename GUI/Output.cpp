@@ -36,15 +36,21 @@ Output::Output()
 	//DrawIcons
 	MenuItemImages[ITM_SAVE] = PATH_ICONS_DRAW + "saved.jpg";
 	MenuItemImages[ITM_LOAD] = PATH_ICONS_DRAW + "load.jpg";
-	MenuItemImages[ITM_REDO] = PATH_ICONS_DRAW + "redo.jpg";
 	MenuItemImages[ITM_UNDO] = PATH_ICONS_DRAW + "undo.jpg";
+	MenuItemImages[ITM_REDO] = PATH_ICONS_DRAW + "redo.jpg";
+	MenuItemImages[ITM_RECORD] = PATH_ICONS_DRAW + "record.jpg";
+	MenuItemImages[ITM_STOP] = PATH_ICONS_DRAW + "stop.jpg";
 	MenuItemImages[ITM_PLAY] = PATH_ICONS_DRAW + "play.jpg";
-	MenuItemImages[ITM_PAUSE] = PATH_ICONS_DRAW + "pause.jpg";
+	MenuItemImages[ITM_AUDIO] = PATH_ICONS_DRAW + "audio.jpg";
 	MenuItemImages[ITM_ADD] = PATH_ICONS_DRAW + "shapes.jpg";
 	MenuItemImages[ITM_SELECT] = PATH_ICONS_DRAW + "select.jpg";
+	MenuItemImages[ITM_DELETE] = PATH_ICONS_DRAW + "delete.jpg";
+	MenuItemImages[ITM_CLEARALL] = PATH_ICONS_DRAW + "clearall.jpg";
 	MenuItemImages[ITM_FILL] = PATH_ICONS_DRAW + "fill.jpg";
 	MenuItemImages[ITM_COLOR] = PATH_ICONS_DRAW + "color.jpg";
 	MenuItemImages[ITM_MOVE] = PATH_ICONS_DRAW + "move.jpg";
+	MenuItemImages[ITM_DRAG] = PATH_ICONS_DRAW + "drag.jpg";
+	MenuItemImages[ITM_RESIZE] = PATH_ICONS_DRAW + "enlarge.jpg";
 	MenuItemImages[ITM_PLAY_MODE] = PATH_ICONS_DRAW + "playMode.jpg";
 	MenuItemImages[ITM_EXIT] = PATH_ICONS_DRAW + "exit.jpg";
 
