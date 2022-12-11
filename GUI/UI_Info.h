@@ -45,15 +45,21 @@ enum DrawMenuItem // The items of the Draw menu
 {
 	ITM_SAVE,
 	ITM_LOAD,
-	ITM_REDO,
 	ITM_UNDO,
+	ITM_REDO,
+	ITM_RECORD,
+	ITM_STOP,
 	ITM_PLAY,
-	ITM_PAUSE,
+	ITM_AUDIO,
 	ITM_ADD,
 	ITM_SELECT,
+	ITM_DELETE,
+	ITM_CLEARALL,
 	ITM_FILL,
 	ITM_COLOR,
 	ITM_MOVE,
+	ITM_DRAG,
+	ITM_RESIZE,
 	ITM_PLAY_MODE,
 	ITM_EXIT,		//Exit item
 	DRAW_ITM_COUNT		//no. of menu items 
