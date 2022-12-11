@@ -58,15 +58,21 @@ ActionType Input::GetUserAction(Output* po) const
 				{
 					case ITM_SAVE : return SAVE;
 					case ITM_LOAD : return LOAD;
+					case ITM_UNDO: return UNDO;
 					case ITM_REDO : return REDO;
-					case ITM_UNDO : return UNDO;
+					case ITM_RECORD: return RECORD;
+					case ITM_STOP: return STOP;
 					case ITM_PLAY:  return  PLAY;
-					case ITM_PAUSE: return PAUSE;
+					case ITM_AUDIO: return AUDIO;
 					case ITM_ADD:   return ADD;
 					case ITM_SELECT :  return SELECT;
+					case ITM_DELETE: return DLTE;
+					case ITM_CLEARALL: return CLR;
 					case ITM_FILL:   return FILL;
 					case ITM_COLOR:  return DCOLOR;
 					case ITM_MOVE:   return MOVE; 
+					case ITM_DRAG: return DRAG;
+					case ITM_RESIZE: return RESIZE;
 					case ITM_PLAY_MODE: return TO_PLAY; 
 					case ITM_EXIT: return EXIT;						 					//A click on empty place in desgin toolbar
 				}
@@ -151,7 +157,7 @@ ActionType Input::GetUserAction(Output* po) const
 				case PLAY_SHAPE: return PSHAPE;
 				case PLAY_COLORNSHAPE : return PCOLORNSHAPE;
 				case PLAY_DRAW_MODE: return TO_DRAW;
-				case PLAY_EXIT: return EXIT_PLAY;
+				case PLAY_EXIT: return EXT_PLAY;
 
 			}		
 		}			//[2] User clicks on the drawing area
